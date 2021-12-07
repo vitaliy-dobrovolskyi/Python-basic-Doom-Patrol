@@ -106,25 +106,6 @@ for animal in animals:
 # # Magic methods:
 # # 8. Create class City with name, population instance attributes, return a new instance only when population > 1500,
 # # otherwise return message: "Your city is too small".
-class City:
-    def __init__(self, name, population):
-        self.name = name
-        self.population = population
 
-    def check(self):
-        if self.population > 1500:
-            return self.population
-        else:
-            print(f"{self.name} is so small city")
-
-
-Lviv = City('Lviv', 25000)
-Holovetske = City('Holovetske', 1000)
-Rivne = City('Rivne', 20000)
-
-cities = (Lviv, Holovetske, Rivne)
-
-for i in cities:
-    print(i.check())
 
 
