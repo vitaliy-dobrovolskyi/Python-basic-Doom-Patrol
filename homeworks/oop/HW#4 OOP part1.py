@@ -34,20 +34,20 @@ class Bus(Vehicle):
         print(f'You can take {self.seating_capacity} passengers')
 
 
-Neoplan = Bus("53", "110", "1 000 000")
-School_bus = Bus("44", "70", "600 000")
+neoplan = Bus("53", "110", "1 000 000")
+school_bus = Bus("44", "70", "600 000")
 
-Neoplan.print_seating_capacity()
-Neoplan.print_mileage()
-School_bus.print_mileage()
+neoplan.print_seating_capacity()
+neoplan.print_mileage()
+school_bus.print_mileage()
 
 # 3. Determine which class a given Bus object belongs to (Check type of an object)
 
-print(type(Neoplan))
+print(type(neoplan))
 
 # 4. Determine if School_bus is also an instance of the Vehicle class
 
-print(isinstance(School_bus, Vehicle))
+print(isinstance(school_bus, Vehicle))
 
 
 # 5. Create a new class School with get_school_id and number_of_students instance attributes
@@ -62,13 +62,17 @@ class School:
 # - bus_school_color
 
 class SchoolBus(School, Bus):
-    def __init__(self, bus_school_color, get_school_id, number_of_students, seating_capacity, max_speed, mileage):
+    def __init__(self, bus_school_color, get_school_id, number_of_students,
+                 seating_capacity, max_speed, mileage):
         Bus.__init__(self, seating_capacity, max_speed, mileage)
         School.__init__(self, get_school_id, number_of_students)
         self.bus_school_color = bus_school_color
 
-    def bus_school_color(self):
+    def print_bus_school_color(self):
         print(f'School bus is {self.bus_school_color}')
+
+bs=SchoolBus("yellow", '5','6','7','8','9')
+bs.print_bus_school_color()
 
 
 
@@ -97,7 +101,7 @@ class Wolf:
 
 grey_wolf = Wolf(make_sound="Metallika")
 
-animals = (Grey_wolf, Brown)
+animals = (grey_wolf, brown)
 
 for animal in animals:
     animal.print_make_sound()
